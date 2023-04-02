@@ -1,0 +1,5 @@
+[tool.semantic_release]
+version_variable = "tictactoe/__init__.py:__version__"
+version_source = "commit"
+changelog_file = "CHANGELOG.md"
+commit_author = "GitHub Action [bot] <action@github.com>"
