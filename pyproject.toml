@@ -13,6 +13,7 @@ pyinstaller = "^5.9.0"
 [tool.poetry.group.dev.dependencies]
 pyinstaller = "^5.9.0"
 python-semantic-release = "^7.25.0"
+flake8 = "^4.0.1"
 
 [build-system]
 requires = ["poetry-core>=1.1.7"]
