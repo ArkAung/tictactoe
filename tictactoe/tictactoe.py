@@ -1,6 +1,7 @@
 import tkinter as tk
 import tkinter.messagebox
 
+
 class TicTacToeLogic:
     def __init__(self):
         self.current_player = "X"
@@ -29,6 +30,7 @@ class TicTacToeLogic:
     def reset_board(self):
         self.board = [[" " for _ in range(3)] for _ in range(3)]
         self.current_player = "X"
+
 
 class TicTacToeGUI(tk.Tk):
     def __init__(self):
@@ -64,9 +66,11 @@ class TicTacToeGUI(tk.Tk):
             for j in range(3):
                 self.buttons[i][j]["text"] = " "
 
+
 def main():
     app = TicTacToeGUI()
     app.mainloop()
+
 
 if __name__ == "__main__":
     main()

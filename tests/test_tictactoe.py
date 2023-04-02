@@ -1,6 +1,7 @@
 import unittest
 from tictactoe.tictactoe import TicTacToeLogic
 
+
 class TestTicTacToeLogic(unittest.TestCase):
     def test_check_winner(self):
         game = TicTacToeLogic()
@@ -57,6 +58,7 @@ class TestTicTacToeLogic(unittest.TestCase):
             for cell in row:
                 self.assertEqual(cell, " ")
         self.assertEqual(game.current_player, "X")
+
 
 if __name__ == '__main__':
     unittest.main()
