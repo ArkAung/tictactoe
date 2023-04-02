@@ -15,5 +15,15 @@ pyinstaller = "^5.9.0"
 python-semantic-release = "^7.25.0"
 
 [build-system]
-requires = ["poetry-core"]
+requires = ["poetry-core>=1.1.7"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.semantic_release]
+version_variable = [
+    "tictactoe/__init__.py:__version__",
+    "pyproject.toml:version"
+]
+branch = "main"
+upload_to_pypi = false
+upload_to_release = true
+build_command = "pip install poetry && poetry build"
