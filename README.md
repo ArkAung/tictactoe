@@ -1,6 +1,6 @@
 # Tic Tac Toe
 
-A simple Tic Tac Toe game built with Python and Tkinter.
+A simple Tic Tac Toe game built with Python and Tkinter. This repo is meant to demonstrate how to structure a typical project such as: project directory structure, unit tests, instructive README to run, test and build, Makefile to facilitate running, building and testing the project, project depedency management and CI workflow.
 
 ## Table of Contents
 
@@ -20,6 +20,7 @@ To get started with this project, you should have Python 3.7 or higher and Poetr
 ```bash
 git clone https://github.com/<username>/tictactoe.git
 cd tictactoe
+```
 
 2. Install the project dependencies using Poetry:
 ```bash
