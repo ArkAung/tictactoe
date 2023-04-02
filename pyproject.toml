@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "tictactoe"
+version = "0.1.0"
+description = "A simple tic-tac-toe game in Python"
+authors = ["Arkar Min Aung <arica.aung@gmail.com>"]
+license = "MIT License"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.7,<3.12"
+pyinstaller = "^5.9.0"
+
+[tool.poetry.group.dev.dependencies]
+pyinstaller = "^5.9.0"
+python-semantic-release = "^7.25.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
