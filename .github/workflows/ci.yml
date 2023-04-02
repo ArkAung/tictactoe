@@ -1,0 +1,64 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+
+    - name: Install Poetry
+      run: |
+        curl -sSL https://install.python-poetry.org | python3 -
+
+    - name: Install dependencies
+      run: |
+        ~/.local/bin/poetry install
+
+    - name: Run tests
+      run: |
+        ~/.local/bin/poetry run python -m unittest discover tests
+
+  version_and_changelog:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+
+    - name: Install Poetry
+      run: |
+        curl -sSL https://install.python-poetry.org | python3 -
+
+    - name: Install dependencies
+      run: |
+        ~/.local/bin/poetry install
+
+    - name: Generate version and changelog
+      run: |
+        ~/.local/bin/poetry run semantic-release version
+        ~/.local/bin/poetry run semantic-release changelog
+
+    - name: Commit version and changelog changes
+      run: |
+        git config user.name "GitHub Action [bot]"
+        git config user.email ""action@github.com""
+        git add CHANGELOG.md tictactoe/__init__.py
+        git commit -m "Update version and changelog" || true
+        git push || true
