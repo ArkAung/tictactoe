@@ -1,6 +1,10 @@
 [tool.poetry]
 name = "tictactoe"
+<<<<<<< HEAD
 version = "0.1.0"
+=======
+version = "0.2.0"
+>>>>>>> 8d7c195 (build: update release ci step)
 description = "A simple tic-tac-toe game in Python"
 authors = ["Arkar Min Aung <arica.aung@gmail.com>"]
 license = "MIT License"
@@ -21,10 +25,17 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.semantic_release]
 version_variable = [
+<<<<<<< HEAD
     "tictactoe/__init__.py:__version__",
+=======
+>>>>>>> 8d7c195 (build: update release ci step)
     "pyproject.toml:version"
 ]
 branch = "main"
 upload_to_pypi = false
 upload_to_release = true
+<<<<<<< HEAD
 build_command = "pip install poetry && poetry build"
+=======
+build_command = "make build"
+>>>>>>> 8d7c195 (build: update release ci step)
